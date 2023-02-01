@@ -7,7 +7,7 @@ import requests
 
 url = "https://api.pwnedpasswords.com/range/"
 
-pwd = getpass.getpass("Password to hash: ")
+pwd = getpass.getpass("Password to check: ")
 res = hashlib.sha1(pwd.encode()).hexdigest()
 prefix = res[:5]
 postfix = res[5:].upper()
