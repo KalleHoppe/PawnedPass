@@ -20,9 +20,13 @@ data = req.text
 
 #print(f"Postfix: {res[5:]}")
 #print(reqUrl)
-
+found = False
 for line in data.splitlines():
     if line.split(":")[0] == postfix:
         print ("CRAP! Your password is out in the wild, you should change it ASAP!")
         print (f"It's been found {line.split(':')[1]} times!")
+        found = True
         break
+
+if not found:
+    print(f"Your password has not been leaked...yet :)")
